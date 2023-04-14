@@ -1,0 +1,31 @@
+{
+    "common": {
+        "address": "127.0.0.1",
+        "port": 30330,
+        "timeout": 90,
+        "input_file": "../data/sender_input_file.csv",
+        "has_header": false,
+        "output_file": "../data/sender_output_file.csv",
+        "ids_num": 3,
+        "is_sender": true,
+        "verbose": true
+    },
+    "paillier_params": {
+        "paillier_n_len": 2048,
+        "enable_djn": true,
+        "apply_packing": false,
+        "statistical_security_bits": 40
+    },
+    "ecc_params": {
+        "curve_id": 415
+    },
+    "dp_params": {
+        "epsilon": 2.0,
+        "maximum_queries": 10,
+        "use_precomputed_tau": true,
+        "precomputed_tau": 1440,
+        "input_dp": true,
+        "has_zero_column": false,
+        "zero_column_index": -1
+    }
+}
