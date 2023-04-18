@@ -3,11 +3,11 @@
 
 ### Privacy leakage in some PSI protocols
 
-A variety of PSI protocols have been developed in academia and deployed in industry. Among them, the ECDH-style PSI protocols [1-4] have gained wider deployment than other types, owing to their low communication complexity, particularly for handling large-scale data. Additionally, it is better suited to practical requirements such as multi-ID matching. A recent [study](https://www.usenix.org/system/files/sec22-guo.pdf) in USENIX 22'[5] has found that ECDH-style PSI protocols that disclose the intersection size may inadvertently leak membership information about the parties' sets. Attackers can exploit this leakage to de-anonymize some data records in the party's set. Even though this does not directly violate the intended security guarantee of PSI, which is to keep each party's input set confidential, such PSI protocols can reveal additional information about whether members of one set belong to the other set or not (see Fig.1). As a result, such membership leakage could violate industry privacy requirements (Apple's App Tracking Transparency) or violate regulations such as GDPR, as one party is now able to track or link users based on the data provided by the other party. 
+A variety of PSI protocols have been developed in academia and deployed in industry. Among them, the ECDH-style PSI protocols [1-4] have gained wider deployment than other types, owing to their low communication complexity, particularly for handling large-scale data. Additionally, it is better suited to practical requirements such as multi-ID matching. Recent studies in [USENIX22'[5]](https://www.usenix.org/system/files/sec22-guo.pdf) and [PoPETs23'[7]](https://petsymposium.org/popets/2023/popets-2023-0043.pdf) have found that ECDH-style PSI protocols that disclose the intersection size may inadvertently leak membership information about the parties' sets. Attackers can exploit this leakage to de-anonymize some data records in the party's set. Even though this does not directly violate the intended security guarantee of PSI, which is to keep each party's input set confidential, such PSI protocols can reveal additional information about whether members of one set belong to the other set or not (see Fig.1). As a result, such membership leakage could violate industry privacy requirements (Apple's App Tracking Transparency) or violate regulations such as GDPR, as one party is now able to track or link users based on the data provided by the other party. 
 
 <figure>
 <img src='images/privacy_leakage_ecdh_psi.png' align="middle"/>
-<figcaption align = "center">Figure 1. Illustration of privacy leakage under ECDH-style PSI.</figcaption>
+<div align="center">Figure 1. Illustration of privacy leakage under ECDH-style PSI.</div>
 </figure>
 
 ### Multi-ID PSI is more vulnerable
@@ -20,8 +20,9 @@ In light of the de-anonymization issue of PSIs mentioned above, we have develope
 
 <figure>
 <img src='images/dpca_psi.png' align="middle"/>
-<figcaption align = "center">Figure 2. Illustration of our DPCA-PSI protocol.</figcaption>
+<div align="center">Figure 2. Illustration of our DPCA-PSI protocol.</div>
 </figure>
+<br>
 
 DPCA-PSI organically integrates a PSI protocol with a two-party differentially private (DP) mechanism. We have carefully crafted DPCA-PSI to ensure secure and efficient computation of intersection-related statistics from private datasets while maintaining DP guarantees. Our DPCA-PSI offers three significant contributions to the state-of-the-art in this field:
 
@@ -37,8 +38,9 @@ DPCA-PSI organically integrates a PSI protocol with a two-party differentially p
 <div align="center">
 <img src='images/membership_leakage_dpca_psi.png' width = "800" height = "400" align="middle"/>
 </div>
-<figcaption align = "center">Figure 3. Percentage of user membership leakage of ECDH-style PSI and our DPCA-PSI in both online and offline attack scenarios.</figcaption>
+<div align="center">Figure 3. Percentage of user membership leakage of ECDH-style PSI and our DPCA-PSI in both online and offline attack scenarios </div>
 </figure>
+<br>
 
 We replicated the membership inference attack described in the study [5] and further optimized it. Our attack experiments were conducted using the open-source PSI protocols widely used in the industry [2-4], on a COVID data set [6], as shown in Fig. 2. The left graph represents an online attack scenario where data arrives in streams, resembling real-world settings. The right graph represents an offline attack scenario. It is observed that our DPCA-PSI protocol does not reveal any membership information under the (optimized) USENIX'22 inference attack [5], even when conducting up to 30 intersect operations.
 
@@ -48,14 +50,16 @@ In addition, DPCA-PSI demonstrates high efficiency in practice, as evidenced in 
 <div align="center">
 <img src='images/performance_comparison.png' width = "800" height = "367" align="middle"/>
 </div>
-<figcaption align = "left">Table 1. Results of time and communication costs of running the DPCA-PSI, Private-ID, and PS3I (an ECDH-based protocol) for various numbers of users. We benchmarked all protocols in a LAN network setting (10Gbit/s network with a latency of 0.2 ms). </figcaption>
+<br>
+<div align = "left">Table 1. Results of time and communication costs of running the DPCA-PSI, Private-ID, and PS3I (an ECDH-based protocol) for various numbers of users. We benchmarked all protocols in a LAN network setting (10Gbit/s network with a latency of 0.2 ms). </div>
 </figure>
+<br>
 
 <figure>
 <div align="center">
 <img src='images/dummy_data_percentages.png' width = "550" height = "352" align="middle"/>
 </div>
-<figcaption align = "center">Table 2. The percentages of the size of the dummy data in relation to the input data for DPCA-PSI, based on various numbers of users.</figcaption>
+<div align = "center">Table 2. The percentages of the size of the dummy data in relation to the input data for DPCA-PSI, based on various numbers of users.</div>
 </figure>
 
 ### How to use DPCA-PSI
@@ -153,3 +157,5 @@ This software is not an officially supported product of TikTok. It is provided a
 [5] Guo, Xiaojie, et al. "Birds of a Feather Flock Together: How Set Bias Helps to Deanonymize You via Revealed Intersection Sizes." 31st USENIX Security Symposium (USENIX Security 22). 2022.
 
 [6] https://github.com/nshomron/covidpred
+
+[7] Powar, Jovan, and Alastair R. Beresford. "SoK: Managing risks of linkage attacks on data privacy." Proceedings on Privacy Enhancing Technologies 2 (2023): 97-116.
