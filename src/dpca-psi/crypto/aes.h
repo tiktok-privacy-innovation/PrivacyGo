@@ -52,11 +52,11 @@ public:
 
 private:
     static block round_encrypt(block state, const block& round_key) {
-        return _mm_aesenclast_si128(state, round_key);
+        return _mm_aesenc_si128(state, round_key);
     }
 
     static block final_encrypt(block state, const block& round_key) {
-        return _mm_aesenc_si128(state, round_key);
+        return _mm_aesenclast_si128(state, round_key);
     }
 };
 
