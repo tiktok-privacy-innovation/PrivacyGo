@@ -31,3 +31,19 @@ PointerAlignment: Left
 SortIncludes: true
 BreakStringLiterals: false
 ReflowComments: true
+
+# custom
+IncludeCategories:
+# Matches common headers first, but sorts them after project includes
+- Regex: '^<.*.h>'
+  Priority: 1
+- Regex: '^<.*.hpp>'
+  Priority: 2
+- Regex: '^<[^/]*>'
+  Priority: 2
+- Regex: '^"dpca-psi/.*'
+  Priority: 4
+- Regex: '^"ppam/.*'
+  Priority: 4
+- Regex: '^".*'
+  Priority: 3

@@ -1,10 +1,10 @@
-# Contributing to DPCA-PSI
+# Contributing to PrivacyGo
 
-Thank you for investing your time in contributing to DPCA-PSI! 
+Thank you for investing your time in contributing to PrivacyGo!
 
 Read our [Code of Coduct](./CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
 
-This guide details how to use issues and pull requests to improve DPCA-PSI.
+This guide details how to use issues and pull requests to improve PrivacyGo.
 
 ## General Guidelines
 
@@ -20,7 +20,7 @@ Refer to the template for more information on what goes into a PR description.
 
 ### Design Docs
 
-A contributor proposes a design with a PR on the repository to allow for revisions and discussions. If a design needs to be discussed before formulating a document for it, make use of Google doc and GitHub issue to involve the community on the discussion. 
+A contributor proposes a design with a PR on the repository to allow for revisions and discussions. If a design needs to be discussed before formulating a document for it, make use of Google doc and GitHub issue to involve the community on the discussion.
 
 ### GitHub Issues
 
@@ -41,7 +41,7 @@ When filing an issue, please check existing open, or recently closed, issues to 
 
 ### Find interesting issue
 
-If you spot a problem with the problem, [search if an issue already exists](https://github.com/tiktok-privacy-innnovation/DPCA-PSI/issues). If a related issue doesn't exist, you can open a new issue using [issue template](https://github.com/tiktok-privacy-innnovation/DPCA-PSI/issues/new/choose). 
+If you spot a problem with the problem, [search if an issue already exists](https://github.com/tiktok-privacy-innnovation/PrivacyGo/issues). If a related issue doesn't exist, you can open a new issue using [issue template](https://github.com/tiktok-privacy-innnovation/PrivacyGo/issues/new/choose).
 
 ### Solve an issue
 
@@ -49,7 +49,7 @@ Please check `DEVELOPMENT.md` in sub folder to get familar with running and test
 
 ### Open a Pull request.
 
-When you're done making the changes, open a pull request and fill PR template so we can better review your PR. The template helps reviewers understand your changes and the purpose of your pull request. 
+When you're done making the changes, open a pull request and fill PR template so we can better review your PR. The template helps reviewers understand your changes and the purpose of your pull request.
 
 Don't forget to link PR to issue if you are solving one.
 

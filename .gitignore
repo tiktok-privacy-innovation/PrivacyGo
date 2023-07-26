@@ -18,6 +18,20 @@ build/
 env
 thirdparty/
 
+dpca-psi/bin/
+dpca-psi/lib/
+dpca-psi/build/
+dpca-psi/*.build
+dpca-psi/env
+dpca-psi/thirdparty/
+
+ppam/bin/
+ppam/lib/
+ppam/build/
+ppam/*.build
+ppam/env
+ppam/thirdparty/
+
 ########################################################################################
 #### The following are based on templates from https://github.com/github/gitignore. ####
 ########################################################################################
