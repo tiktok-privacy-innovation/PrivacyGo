@@ -8,12 +8,12 @@ BIN_DIR="@BIN_DIR@"
 JSON_DIR="@JSON_DIR@"
 LOG_DIR="@LOG_DIR@"
 
-mkdir -p "${LOG_DIR}/privacy-go/bench/balanced"
-mkdir -p "${LOG_DIR}/privacy-go/bench/unbalanced"
+mkdir -p "${LOG_DIR}/ppam/bench/balanced"
+mkdir -p "${LOG_DIR}/ppam/bench/unbalanced"
 
 sender_feature_size=1
 default_tau_array=(722 954 1194 1440 1690)
-balanced_log_path_bandwith="${LOG_DIR}/privacy-go/bench/balanced"
+balanced_log_path_bandwith="${LOG_DIR}/ppam/bench/balanced"
 echo "Sender balanced test"
 balanced_intersection_size_array=(500 5000 50000 500000 5000000)
 for(( i=0;i<${#balanced_intersection_size_array[@]};i++))
@@ -23,7 +23,7 @@ echo "with dp"
 "${BIN_DIR}/ppam_example" --config_path="${JSON_DIR}/sender_with_precomputed_tau.json" --log_path=$balanced_log_path_bandwith --use_random_data=true --intersection_size=${balanced_intersection_size_array[i]} --intersection_ratio=2 --feature_size=$sender_feature_size --use_default_tau=true --default_tau=${default_tau_array[i]}
 done
 
-unbalanced_log_path_bandwith="${LOG_DIR}/privacy-go/bench/unbalanced"
+unbalanced_log_path_bandwith="${LOG_DIR}/ppam/bench/unbalanced"
 echo "Sender unbalanced test"
 unbalanced_intersection_size_array=(10 100 1000 10000 100000)
 for(( i=0;i<${#unbalanced_intersection_size_array[@]};i++))

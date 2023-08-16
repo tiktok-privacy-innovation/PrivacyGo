@@ -18,12 +18,12 @@ BIN_DIR="@BIN_DIR@"
 JSON_DIR="@JSON_DIR@"
 LOG_DIR="@LOG_DIR@"
 
-mkdir -p "${LOG_DIR}/privacy-go/test/balanced"
-mkdir -p "${LOG_DIR}/privacy-go/test/unbalanced"
+mkdir -p "${LOG_DIR}/ppam/test/balanced"
+mkdir -p "${LOG_DIR}/ppam/test/unbalanced"
 
 sender_feature_size=2
 default_tau_array=(722)
-balanced_log_path_bandwith="${LOG_DIR}/privacy-go/test/balanced"
+balanced_log_path_bandwith="${LOG_DIR}/ppam/test/balanced"
 echo "Sender balanced test"
 balanced_intersection_size_array=(1)
 for(( i=0;i<${#balanced_intersection_size_array[@]};i++))
@@ -35,7 +35,7 @@ echo "without_dp"
 "${BIN_DIR}/ppam_example" --config_path="${JSON_DIR}/sender_without_dp.json" --log_path=$balanced_log_path_bandwith --intersection_size=${balanced_intersection_size_array[i]} --intersection_ratio=2 --feature_size=$sender_feature_size
 done
 
-unbalanced_log_path_bandwith="${LOG_DIR}/privacy-go/test/unbalanced"
+unbalanced_log_path_bandwith="${LOG_DIR}/ppam/test/unbalanced"
 echo "Sender unbalanced test"
 unbalanced_intersection_size_array=(10)
 for(( i=0;i<${#unbalanced_intersection_size_array[@]};i++))
