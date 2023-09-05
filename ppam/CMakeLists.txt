@@ -298,9 +298,9 @@ if(NOT PPAM_BUILD_SHARED_LIBS)
         target_include_directories(ppam PUBLIC
             $<BUILD_INTERFACE:$<TARGET_PROPERTY:${dpca_psi},INTERFACE_INCLUDE_DIRECTORIES>>
             $<INSTALL_INTERFACE:${DPCA_PSI_INCLUDES_INSTALL_DIR}>)
-        target_link_libraries(ppam PUBLIC ${dpca_psi})
     endif()
     set(PPAM_CARRY_DPCA_PSI FALSE)
+    target_link_libraries(ppam PUBLIC ${dpca_psi})
 
     if(PPAM_BUILD_EIGEN)
         add_dependencies(ppam Eigen3::Eigen)
