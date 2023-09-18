@@ -1,0 +1,31 @@
+// Copyright 2023 TikTok Pte. Ltd.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#pragma once
+
+#define MPC_DUALDP_VERSION "@MPC_DUALDP_VERSION@"
+#define MPC_DUALDP_VERSION_MAJOR @MPC_DUALDP_VERSION_MAJOR@
+#define MPC_DUALDP_VERSION_MINOR @MPC_DUALDP_VERSION_MINOR@
+#define MPC_DUALDP_VERSION_PATCH @MPC_DUALDP_VERSION_PATCH@
+
+// Are we in debug mode?
+#cmakedefine MPC_DUALDP_DEBUG
+
+// C++17 features
+#cmakedefine MPC_DUALDP_USE_STD_BYTE
+#cmakedefine MPC_DUALDP_USE_SHARED_MUTEX
+#cmakedefine MPC_DUALDP_USE_IF_CONSTEXPR
+#cmakedefine MPC_DUALDP_USE_MAYBE_UNUSED
+#cmakedefine MPC_DUALDP_USE_NODISCARD
+#cmakedefine MPC_DUALDP_USE_STD_FOR_EACH_N

@@ -15,6 +15,11 @@ Among various PSI protocols that have been developed in academia and industry, E
 
 Privacy-Preserving Ads Measurement (PPAM) leveraging DPCA-PSI enables private ad measurement, offering advertisers the ability to measure the effectiveness of their ads while ensuring user privacy protection. This is achieved through the implementation of key privacy-preserving features, such as encrypted match keys and differential privacy (DP) guaranteed matched group size. These features ensure that user interaction between ad provider and advertiser for ad measurement computation cannot be traced back to individual users. For more detailed information, please refer to [this folder](./ppam).
 
+## MPC-DualDP
+Secure multiparty computation (MPC) is a desired tool to provide privacy to the input data and intermediate results during secure computation. However, MPC can not help if the computation results leak information about the input data. To bound information leakage in outputs of protocols, we can apply differential privacy such that the MPC outputs are perturbed by the addition of noise before the outputs are revealed. Therefore, we need a mechanism that allows MPC servers to collaboratively generate random noise in a secret fashion.
+
+MPC-DualDP is a distributed protocol for generating shared differential privacy noise in a two-server setting. MPC-DualDP leverages MPC to sample random noise according to specific distributions, and outputs the noise in the form of secret sharing.  For more detailed information, please refer to [this folder](./mpc-dualdp).
+
 ## Contribution
 
 Please check [Contributing](CONTRIBUTING.md) for more details.
