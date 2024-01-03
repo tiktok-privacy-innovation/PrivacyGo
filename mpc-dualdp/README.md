@@ -1,11 +1,21 @@
 # MPC-DualDP
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](LICENSE)
 
-Secure multiparty computation (MPC) is a desired tool to provide privacy to the input data and intermediate results during secure computation. However, MPC can not help if the computation results leak information about the input data. To bound information leakage in outputs of protocols, we can apply differential privacy such that the MPC outputs are perturbed by the addition of noise before the outputs are revealed. Therefore, we need a mechanism that allows MPC servers to collaboratively generate random noise in a secret fashion.
+While secure multiparty computation (MPC) protects input data and interim outcomes, it falters when exposing input specifics through outputs.
+To curtail these data leaks, differential privacy proves effective.
+This involves injecting noise into MPC outputs before their disclosure.
+Thus, a discreetly collaborative method for MPC servers to generate random noise becomes indispensable.
 
-MPC-DualDP is a distributed protocol for generating shared differential privacy noise in a two-server setting. MPC-DualDP leverages MPC to sample random noise according to specific distributions, and outputs the noise in the form of secret sharing.
+Our MPC-DualDP protocol is designed for dual-party scenarios, where two servers collaborate to generate shared noise for the purpose of ensuring differential privacy.
+Currently, we support the generation of noise following a binomial distribution, and more distributions might be supported in the future.
+As for the security model, our protocol and implementation provide security and privacy against two semi-honest servers.
+In terms of the protocol's efficiency, it involves only one round of communication, and if we consider a binomial distribution $Bin(n, p)$, the communication complexity scales as $O(n)$.
 
-Currently, we support the generation of noise following binomial distribution, and more distributions might be supported in the future. As for the security model, our protocol and implementation provide security and privacy against two semi-honest servers. The round complexity of our protocol is 1, and the communication complexity is $O(n)$ if we consider a binomial distribution $Bin(n,p = 0.5)$.
+MPC-DualDP guarantees that neither the adversary nor any party possesses knowledge about any portion of the noise generated, ensuring the fulfillment of the differential privacy guarantee.
+As a result, excessive noise injection by each party, a characteristic of other related approaches, can be eliminated.
+This leads to better data utility.
+Consequently, MPC-DualDP stands out in comparison to other similar methods.
+The concealed nature of noise generation for each party also guarantees the coherence of the final output in the MPC process for both parties.
 
 ## How to use MPC-DualDP
 

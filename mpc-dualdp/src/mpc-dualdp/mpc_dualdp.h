@@ -38,21 +38,22 @@ public:
     ~MPCDualDP() = default;
 
     /**
-     * @brief Initialize psi and mpc protocol.
+     * @brief Initializes party id and net io channel.
      * @param[in] party_id The id of party.
-     * @param[in] net Net io channel.
-     * @return None.
+     * @param[in] net The network interface.
+     * @return None
      */
     void initialize(const std::size_t party_id, const std::shared_ptr<IOBase>& net);
 
     /**
-     * @brief MPC-DualDP protocol.
+     * @brief Samples secret-shared DP noise from binomial distribution Bin(binomial_n, 0.5).
+     * binomial_n is calculated based on DP parameters (delta, epsilon, and sensitivity).
      * @param[in] n Amount of noise to be generated.
      * @param[in] epsilon DP parameter $epsilon$.
      * @param[in] delta DP parameter $delta$.
      * @param[in] sensitivity DP parameter $sensitivity$.
-     * @param[out] noise DP noise secret shares.
-     * @return none
+     * @param[out] noise Secret-shared DP noise in $Z_{2^{64}}$.
+     * @return None
      */
     void binomial_sampling(const std::size_t n, const double epsilon, const double delta, const double sensitivity,
             std::vector<int64_t>& noise);
