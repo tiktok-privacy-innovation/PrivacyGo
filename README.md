@@ -20,6 +20,9 @@ Secure multiparty computation (MPC) is a desired tool to provide privacy to the 
 
 MPC-DualDP is a distributed protocol for generating shared differential privacy noise in a two-server setting. MPC-DualDP leverages MPC to sample random noise according to specific distributions, and outputs the noise in the form of secret sharing.  For more detailed information, please refer to [this folder](./mpc-dualdp).
 
+## AnonPSI
+The widely used ECDH-PSI, while keeping all data encrypted, discloses the size of the intersection set during protocol execution. We refer to such protocols as size-revealing PSI. AnonPSI offers a framework for systematically assessing the privacy of intersection-size-revealing PSI protocols by employing carefully designed set membership inference attacks. It enables an adversary to infer whether a targeted individual is in the intersection, which is also known as membership information. For more detailed information, please refer to [this folder](./anonpsi). AnonPSI was recently accepted for NDSS24, and we look forward to engaging in discussions during the offline sessions at NDSS.
+
 ## Contribution
 
 Please check [Contributing](CONTRIBUTING.md) for more details.
