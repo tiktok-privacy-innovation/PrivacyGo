@@ -23,6 +23,12 @@ MPC-DualDP is a distributed protocol for generating shared differential privacy 
 ## AnonPSI
 The widely used ECDH-PSI, while keeping all data encrypted, discloses the size of the intersection set during protocol execution. We refer to such protocols as size-revealing PSI. AnonPSI offers a framework for systematically assessing the privacy of intersection-size-revealing PSI protocols by employing carefully designed set membership inference attacks. It enables an adversary to infer whether a targeted individual is in the intersection, which is also known as membership information. For more detailed information, please refer to [this folder](./anonpsi). AnonPSI was recently accepted for NDSS24, and we look forward to engaging in discussions during the offline sessions at NDSS.
 
+## GCMS/OCMS
+Local Differential Privacy (LDP) protocols enable the collection of randomized client messages for data analysis, without the necessity of a trusted data curator. Such protocols have been successfully deployed in real-world scenarios by major tech companies like Google, Apple, and Microsoft.
+
+We propose a Generalized Count Mean Sketch (GCMS) protocol that captures many existing frequency estimation protocols. Our method significantly improves the three-way trade-offs between communication, privacy, and accuracy. We also introduce a general utility analysis framework that enables optimizing parameter designs. Based on that, we propose an
+Optimal Count Mean Sketch (OCMS) framework that minimizes the variance for collecting items with targeted frequencies. Moreover, we present a novel protocol for collecting data within unknown domain, as our frequency estimation protocols only work effectively with known data domain. For more detailed information, please refer to [this folder](./ldp).
+
 ## Contribution
 
 Please check [Contributing](CONTRIBUTING.md) for more details.
